@@ -1,0 +1,21 @@
+.split {
+  display: flex;
+  flex-direction: column;
+}
+
+.split > * {
+  flex-basis: 100%;
+}
+
+.split > * + * {
+  margin: 2.5rem 0 0 0;
+}
+
+@media (min-width: 40rem) {
+  .split {
+    flex-direction: row;
+  }
+  .split > * + * {
+    margin: 0 0 0 2.5rem;
+  }
+}

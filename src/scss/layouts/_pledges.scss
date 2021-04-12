@@ -1,0 +1,128 @@
+.pledges .product {
+  display: grid;
+  grid-template-columns: min-content max-content 1fr;
+  /* grid-template-rows: 1fr 1fr minmax(min-content, 1fr) 1fr; */
+  gap: 1rem;
+  border: 1px solid var(--clr-gray-600);
+}
+
+.product.selected {
+  border: 3px solid var(--clr-primary-light);
+}
+.pledges .product__selection {
+  grid-column: 1 / 2;
+  align-self: center;
+}
+
+.pledges .product__header {
+  grid-column: 2/-1;
+}
+
+.pledges .product__description {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+}
+
+.pledges .product__details {
+  grid-column: 1 / 3;
+  grid-row: 3/4;
+}
+
+.pledge {
+  grid-column: 1 /-1;
+  grid-row: 4 / 5;
+  padding: 0 1.5rem;
+  padding-top: 2rem;
+  margin: 0 -1.5rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--clr-gray-600);
+  display: none;
+  gap: 1.5rem;
+  flex-direction: column;
+  text-align: center;
+}
+
+.selected .pledge {
+  display: flex;
+}
+
+.pledge__form {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pledge__form > * {
+  width: 100%;
+}
+
+.pledge__amount {
+  border: 1px solid var(--clr-gray-600);
+  border-radius: 100vh;
+  padding: 1rem 0.5rem 1rem 1rem;
+  color: var(--clr-gray-600);
+}
+
+.pledge__amount__input {
+  color: var(--clr-black);
+  font-weight: var(--fw-bold);
+  border: none;
+  display: inline-block;
+  width: 6ch;
+}
+
+.pledge__amount::before {
+  content: '$';
+  display: inline-block;
+  font-weight: bold;
+  padding-right: 4px;
+}
+
+.pledge__amount__input:hover,
+.pledge__amount__input:focus {
+  outline: none;
+}
+
+@media (min-width: 50rem) {
+  .pledges .product {
+    gap: 1rem 2rem;
+  }
+
+  .pledges .product__selection {
+    grid-row: 1/4;
+    align-self: self-start;
+    padding-top: 8px;
+  }
+
+  .pledges .product__header {
+    grid-column: 2/-2;
+  }
+
+  .pledges .product__description {
+    grid-column: 2 / -1;
+    grid-row: 2 / 3;
+  }
+
+  .pledges .product__details {
+    grid-column: 3 / 4;
+    grid-row: 1/2;
+    justify-self: end;
+  }
+
+  .pledge {
+    grid-column: 1 /-1;
+    grid-row: 3 / 4;
+    /* padding-top: 1.5rem;
+    border-top: 1px solid var(--clr-neutral-gray);
+    display: flex; */
+    /* gap: 1rem; */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+}

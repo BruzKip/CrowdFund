@@ -1,0 +1,59 @@
+.modal {
+  --flow-spacer: 2rem;
+  background-color: var(--clr-white);
+  position: absolute;
+  z-index: 1010;
+  top: 10rem;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__close-icon {
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  cursor: pointer;
+  padding: 7px;
+}
+
+.modal--success {
+  text-align: center;
+}
+
+.modal--success .section__subtitle {
+  margin-top: 1rem;
+}
+
+.modal--success::before {
+  content: '';
+  display: inline-block;
+  background-image: url('../../assets/images/icon-check.svg');
+  width: 64px;
+  height: 64px;
+  text-align: center;
+}
+
+@media (min-width: 50rem) {
+  .modal {
+    left: 50%;
+    width: 47rem;
+    transform: translateX(-50%);
+  }
+
+  .modal--success {
+    position: absolute;
+    z-index: 1010;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 33rem;
+  }
+
+  .modal .product__quantity {
+    --fs-strong: 1.3rem;
+    vertical-align: 0em;
+  }
+}

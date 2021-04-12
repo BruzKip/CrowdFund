@@ -1,0 +1,42 @@
+.call-to-action__bookmark {
+  display: flex;
+  align-items: center;
+  background-color: hsl(0, 0%, 95%);
+  border-radius: 100vh;
+  cursor: pointer;
+}
+
+.call-to-action__bookmark .icon {
+  display: inline-block;
+  width: 59px;
+  height: 100%;
+}
+
+.bookmarked.call-to-action__bookmark .icon circle {
+  fill: var(--clr-primary-dark);
+}
+
+.bookmarked.call-to-action__bookmark .icon path {
+  fill: var(--clr-white);
+}
+
+.call-to-action__bookmark .text {
+  display: none;
+  padding: 1rem 1.5rem 1rem 1rem;
+  font-weight: var(--fw-bold);
+}
+
+.bookmarked.call-to-action__bookmark .text {
+  color: var(--clr-primary-dark);
+}
+
+.call-to-action__main {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+@media (min-width: 50rem) {
+  .call-to-action__bookmark .text {
+    display: inline;
+  }
+}
