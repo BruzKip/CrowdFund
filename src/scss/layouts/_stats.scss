@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .stats {
   --flow-spacer: 2rem;
   --fs-strong: 2rem;
@@ -51,7 +53,7 @@
   border-radius: 100vh;
 }
 
-@media (min-width: 50rem) {
+@include mq(small) {
   .stats__list {
     flex-direction: row;
     justify-content: flex-start;

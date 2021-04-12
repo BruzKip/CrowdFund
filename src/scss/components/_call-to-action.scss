@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .call-to-action__bookmark {
   display: flex;
   align-items: center;
@@ -35,7 +37,7 @@
   padding-right: 3rem;
 }
 
-@media (min-width: 50rem) {
+@include mq(small) {
   .call-to-action__bookmark .text {
     display: inline;
   }

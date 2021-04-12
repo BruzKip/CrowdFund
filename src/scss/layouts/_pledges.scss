@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .pledges .product {
   display: grid;
   grid-template-columns: min-content max-content 1fr;
@@ -83,7 +85,7 @@
   outline: none;
 }
 
-@media (min-width: 50rem) {
+@include mq(small) {
   .pledges .product {
     gap: 1rem 2rem;
   }

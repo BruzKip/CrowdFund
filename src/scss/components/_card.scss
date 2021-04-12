@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .product__selection input[type='checkbox']:checked {
   --clr-border: var(--clr-primary-light);
 }
@@ -114,7 +116,7 @@
   width: max-content;
 }
 
-@media (min-width: 50rem) {
+@include mq(small) {
   .product {
     padding-left: 2rem;
     padding-right: 2rem;

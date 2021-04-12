@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .nav-container {
   display: flex;
   flex-direction: column;
@@ -42,7 +44,7 @@
   border-top: 1px solid #e8e8e8;
 }
 
-@media (min-width: 50rem) {
+@include mq(small) {
   .nav-container {
     padding-top: 2rem;
     flex-direction: row;
