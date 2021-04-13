@@ -1,21 +1,22 @@
+@use '../abstracts/' as *;
+
 .split {
   display: flex;
   flex-direction: column;
-}
 
-.split > * {
-  flex-basis: 100%;
-}
-
-.split > * + * {
-  margin: 2.5rem 0 0 0;
-}
-
-@media (min-width: 40rem) {
-  .split {
+  @include mq(small) {
     flex-direction: row;
   }
-  .split > * + * {
-    margin: 0 0 0 2.5rem;
+
+  > * {
+    flex-basis: 100%;
+
+    + * {
+      margin: 2.5rem 0 0 0;
+
+      @include mq(small) {
+        margin: 0 0 0 2.5rem;
+      }
+    }
   }
 }
