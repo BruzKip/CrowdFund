@@ -9,13 +9,13 @@
   font-weight: var(--fw-bold);
   // font-size: var(--fs-300);
   text-decoration: none;
-}
 
-.btn--dark {
-  background-color: var(--clr-gray-600);
-}
+  &--dark {
+    background-color: var(--clr-gray-600);
+  }
 
-.btn:hover,
-.btn:focus {
-  background-color: var(--clr-primary-dark);
+  &:hover,
+  &:focus {
+    background-color: var(--clr-primary-dark);
+  }
 }

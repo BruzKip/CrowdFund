@@ -1,44 +1,48 @@
 @use '../abstracts' as *;
 
-.call-to-action__bookmark {
-  display: flex;
-  align-items: center;
-  background-color: hsl(0, 0%, 95%);
-  border-radius: 100vh;
-  cursor: pointer;
-}
+.call-to-action {
+  &__bookmark {
+    display: flex;
+    align-items: center;
+    background-color: hsl(0, 0%, 95%);
+    border-radius: 100vh;
+    cursor: pointer;
 
-.call-to-action__bookmark .icon {
-  display: inline-block;
-  width: 59px;
-  height: 100%;
-}
+    & .icon {
+      display: inline-block;
+      width: 59px;
+      height: 100%;
+    }
 
-.bookmarked.call-to-action__bookmark .icon circle {
-  fill: var(--clr-primary-dark);
-}
+    & .text {
+      display: none;
+      padding: 1rem 1.5rem 1rem 1rem;
+      font-weight: var(--fw-bold);
 
-.bookmarked.call-to-action__bookmark .icon path {
-  fill: var(--clr-white);
-}
+      @include mq(small) {
+        display: inline;
+      }
+    }
 
-.call-to-action__bookmark .text {
-  display: none;
-  padding: 1rem 1.5rem 1rem 1rem;
-  font-weight: var(--fw-bold);
-}
+    &.bookmarked {
+      & .icon {
+        & circle {
+          fill: var(--clr-primary-dark);
+        }
 
-.bookmarked.call-to-action__bookmark .text {
-  color: var(--clr-primary-dark);
-}
+        & path {
+          fill: var(--clr-white);
+        }
+      }
 
-.call-to-action__main {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
+      & .text {
+        color: var(--clr-primary-dark);
+      }
+    }
+  }
 
-@include mq(small) {
-  .call-to-action__bookmark .text {
-    display: inline;
+  &__main {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }

@@ -1,24 +1,5 @@
 @use '../abstracts' as *;
 
-.nav-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  height: 100%;
-  padding-top: 1rem;
-  position: relative;
-  z-index: 1000;
-}
-
-.nav-top {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  height: 80px;
-  padding: 2rem 0;
-}
-
 .nav {
   /* position: absolute; */
   /* bottom: 0; */
@@ -28,56 +9,77 @@
   /* height: 100%; */
   background-color: var(--clr-white);
   border-radius: 0.5rem;
-}
 
-.nav--desktop {
-  display: none;
-}
-
-.nav__list__item {
-  padding: 0.8em;
-  padding-left: 2em;
-  font-size: 1.25rem;
-}
-
-.nav__list > * + * {
-  border-top: 1px solid #e8e8e8;
-}
-
-@include mq(small) {
-  .nav-container {
-    padding-top: 2rem;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .nav-container > * {
-    width: auto;
-  }
-
-  .nav--mobile {
+  &--desktop {
     display: none;
   }
 
-  .nav--desktop {
-    display: block;
-    margin-top: 0;
-    border-radius: 0;
-    background-color: transparent;
-  }
-
-  .nav__list {
+  &-container {
     display: flex;
-  }
-  .nav__list > * + * {
-    border-top: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 1rem;
+    position: relative;
+    z-index: 1000;
+
+    @include mq(small) {
+      padding-top: 2rem;
+      flex-direction: row;
+      align-items: center;
+
+      & > * {
+        width: auto;
+      }
+    }
   }
 
-  .nav__list__item {
-    font-size: 1rem;
+  &-top {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    padding: 2rem 0;
   }
 
-  .nav__list__item a {
-    color: var(--clr-white);
+  &__list {
+    & > * + * {
+      border-top: 1px solid #e8e8e8;
+    }
+
+    @include mq(small) {
+      display: flex;
+
+      & > * + * {
+        border-top: none;
+      }
+    }
+
+    &__item {
+      padding: 0.8em;
+      padding-left: 2em;
+      font-size: 1.25rem;
+
+      @include mq(small) {
+        font-size: 1rem;
+
+        & a {
+          color: var(--clr-white);
+        }
+      }
+    }
+  }
+
+  @include mq(small) {
+    &--desktop {
+      display: block;
+      margin-top: 0;
+      border-radius: 0;
+      background-color: transparent;
+    }
+
+    &--mobile {
+      display: none;
+    }
   }
 }
